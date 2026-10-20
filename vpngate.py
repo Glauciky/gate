@@ -489,9 +489,8 @@ def main():
     log("VPN GATE", f"SSTP 节点: {sstp_count}")
     log("VPN GATE", f"去重后: {len(uniq)}")
 
-  log("CLOUDFLARE WORKER", f"检测地址: {WORKER_CHECK_URL}")
-  
-  log("CLOUDFLARE WORKER", f"提交检测: {len(uniq)} (并发 {CONCURRENCY}, 单请求超时 {CHECK_TIMEOUT}s)")
+    log("CLOUDFLARE WORKER", f"检测地址: {WORKER_CHECK_URL}")
+    log("CLOUDFLARE WORKER", f"提交检测: {len(uniq)} (并发 {CONCURRENCY}, 单请求超时 {CHECK_TIMEOUT}s)")
     t0 = time.time()
     results = check_all(uniq, session)
     elapsed = time.time() - t0
@@ -505,10 +504,9 @@ def main():
     log("CLOUDFLARE WORKER", f"耗时: {elapsed:.1f}s")
 
     if uniq and not success and len(worker_errors) == len(uniq):
-      for r in worker_errors[:3]:
-    log("CLOUDFLARE WORKER", f"样本错误: {r.get('error')}")
-  
-      die("Worker 全部请求异常, 检测服务不可用 — 本次运行判定失败 (不生成空结果)")
+        for r in worker_errors[:3]:
+            log("CLOUDFLARE WORKER", f"样本错误: {r.get('error')}")
+        die("Worker 全部请求异常, 检测服务不可用 — 本次运行判定失败 (不生成空结果)")
 
     data = build_outputs(results, raw_count, sstp_count, source)
     log("RESULT", f"可用节点: {len(success)}")
