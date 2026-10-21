@@ -1,0 +1,1 @@
+Muse write-access test, 2026-10-21. This file only proves the GitHub App installation works; safe to delete together with the muse-access-test branch.
