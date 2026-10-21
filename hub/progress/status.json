@@ -1,0 +1,12 @@
+{
+  "task_id": "DEMO-001",
+  "title": "演示任务：课程设计报告（模拟）",
+  "context": "demo-2026-001",
+  "status": "working",
+  "progress_percent": 60,
+  "current_step": "第 3 章草稿已完成，等待校对",
+  "next_step": "完成第 4 章后交付全文初稿",
+  "artifacts": ["hub/artifacts/DEMO-001/中间产品-第1至3章草稿.md"],
+  "updated_at": "2026-10-21T19:25+08:00",
+  "updated_by": "agent-a"
+}
